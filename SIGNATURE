@@ -1,0 +1,42 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.61.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 1cd0f9cfc43ec72afc57b104491d58d4c0ee918d Changes
+SHA1 ac54d73db619a43244c3a52ecda8b51462dcaf58 INSTALL
+SHA1 23c628b4a8a36738405ccdacaeb912d2e727b4c0 LICENSE
+SHA1 3b8d9c832fdbf4fda0ee0693b0147915d51d0465 MANIFEST
+SHA1 69b79693d44be595f34f4653d7611960e915b678 META.json
+SHA1 341968ee550c847c99998de99957d4a55311ce7c META.yml
+SHA1 396ba2b410ad0e94e6df005cd05f38c01aaf61d2 Makefile.PL
+SHA1 6a5538f6087ae64c3e5fa686dace0d8fb5dc74c5 README
+SHA1 011f8fbbf6c6eb5f5052d377f2fd9983e791abf5 dist.ini
+SHA1 24e6e032610997d8f6cb29aa0b1768e596491e8e lib/MooseX/Configuration.pm
+SHA1 bc2e181011778fd0112b2074708317e530772ed3 lib/MooseX/Configuration/Trait/Attribute.pm
+SHA1 a0cc3d6f0e43322c21745434b0569815a2e59330 lib/MooseX/Configuration/Trait/Attribute/ConfigKey.pm
+SHA1 5b09cf55481133dff51cf3617795254996fcfc41 lib/MooseX/Configuration/Trait/Object.pm
+SHA1 26104194a13de19c003b7fe0b95e79afe9e72d28 t/basic.t
+SHA1 a032c41ef6887fab1b900669c2d304fab46680e2 t/release-eol.t
+SHA1 455d1dd1867212a665ad5ea4126b572411de300c t/release-no-tabs.t
+SHA1 ab75024ac101e262d0e9f9aaf232b1b4608bba2b t/release-pod-coverage.t
+SHA1 a16c33f189d0fea1fdd630ab6a470a2e05020dd7 t/release-pod-spell.t
+SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iEYEARECAAYFAkz9HcwACgkQIgMCsV8qvRJxSQCeOfNuyZ3139LXMvIRIvf+afB/
+y/0AnjT5hi1UbgZZCtgk7Pl22DivtTJd
+=2UYB
+-----END PGP SIGNATURE-----
