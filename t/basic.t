@@ -37,6 +37,15 @@ use Path::Class qw( dir file );
         documentation => 'This is the c key',
     );
 
+    has foo_key_d => (
+        is            => 'ro',
+        isa           => Num,
+        section       => 'foo',
+        key           => 'd',
+        default       => 42,
+        documentation => 'This is the d key',
+    );
+
     has not_config => (
         is  => 'ro',
         isa => ArrayRef,
@@ -97,12 +106,16 @@ EOF
 a = Foo
 
 ; This is the b key
-; Defaults to 1
+; Defaults to "value of b"
 b = 42
 
 [foo]
 ; This is the c key
 c = 4.2
+
+; This is the d key
+; Defaults to 42
+; d =
 
 EOF
 

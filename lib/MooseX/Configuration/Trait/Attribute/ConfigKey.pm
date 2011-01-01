@@ -1,6 +1,6 @@
 package MooseX::Configuration::Trait::Attribute::ConfigKey;
 BEGIN {
-  $MooseX::Configuration::Trait::Attribute::ConfigKey::VERSION = '0.01';
+  $MooseX::Configuration::Trait::Attribute::ConfigKey::VERSION = '0.02';
 }
 
 use Moose::Role;

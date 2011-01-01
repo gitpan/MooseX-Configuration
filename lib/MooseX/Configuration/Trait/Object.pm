@@ -1,6 +1,6 @@
 package MooseX::Configuration::Trait::Object;
 BEGIN {
-  $MooseX::Configuration::Trait::Object::VERSION = '0.01';
+  $MooseX::Configuration::Trait::Object::VERSION = '0.02';
 }
 
 use Moose::Role;
@@ -8,12 +8,14 @@ use Moose::Role;
 use autodie;
 use namespace::autoclean;
 
+use B;
 use Config::INI::Reader;
 use List::AllUtils qw( uniq );
 use MooseX::Types -declare => ['MaybeFile'];
 use MooseX::Types::Moose qw( HashRef Maybe Str );
 use MooseX::Types::Path::Class qw( File );
 use Path::Class::File;
+use Scalar::Util qw( looks_like_number );
 use Text::Autoformat qw( autoformat );
 
 subtype MaybeFile,
@@ -117,8 +119,15 @@ sub write_config_file {
                 $doc .= "; This configuration key is required.\n";
             }
 
-            if ( my $def = $attr->has_original_default() ) {
-                $doc .= "; Defaults to $def\n";
+            if ( $attr->has_original_default() ) {
+                my $def = $attr->original_default();
+                if ( length $def ) {
+                    $def
+                        = looks_like_number($def)
+                        ? $def
+                        : B::perlstring($def);
+                    $doc .= "; Defaults to $def\n";
+                }
             }
 
             $content .= $doc if defined $doc;

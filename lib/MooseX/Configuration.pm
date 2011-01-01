@@ -1,6 +1,6 @@
 package MooseX::Configuration;
 BEGIN {
-  $MooseX::Configuration::VERSION = '0.01';
+  $MooseX::Configuration::VERSION = '0.02';
 }
 
 use strict;
@@ -29,7 +29,7 @@ MooseX::Configuration - Define attributes which come from configuration files
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -95,6 +95,9 @@ C<builder> you define, the attribute will first look in the config file for a
 corresponding value. If one exists, it will use that, otherwise it will fall
 back to using a default you supply.
 
+If you do supply a default, it must be a string (or number), not a reference
+or undefined value.
+
 All configuration attributes are lazy. This is necessary because the
 configuration file needs to be loaded and parsed before looking up values.
 
@@ -155,9 +158,10 @@ or by a default will I<not> be included in the generated file.
 Keys without a value will still be included in the file as a comment.
 
 If an attribute includes a documentation string, that string will appear as a
-comment above the key. If the attribute defines a simply scalar default, that
-will also be included in the comment. Finally, if the attribute is required,
-that is also mentioned in the comment.
+comment above the key. If the attribute defines a simple scalar default, that
+will also be included in the comment, unless the default is the empty
+string. Finally, if the attribute is required, that is also mentioned in the
+comment.
 
 =head1 DONATIONS
 
